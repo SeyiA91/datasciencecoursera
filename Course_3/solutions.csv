@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Notification: Found</title>
+<style type="text/css">
+<!--
+body {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+p {
+    font-family: verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    top: 0px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+td {
+    font-family: verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    top: 0px;
+}
+.code {
+    font-family: courier;
+    font-size: 12px;
+    top: 0px;
+}
+h1 {
+    font-family: verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+hr {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+-->
+</style>
+</head>
+
+<body>
+<img src="http://www.unitedhealthgroup.com/Images/UHG_Logo.jpg" border="0">
+<h1>This Page Cannot Be Displayed</h1>
+<hr>
+
+<p>
+The page (&nbsp;https://dl.dropboxusercontent.com/u/7710864/data/solutions-apr29.csv&nbsp;)
+is being redirected to (&nbsp;http://10.175.231.148:11000/75eun.pl?Time=22%2FFeb%2F2017%3A14%3A11%3A26%20%2B0000&#038;ID=131344545&#038;Client_IP=10.212.204.137&#038;User=-&#038;Site=dl.dropboxusercontent.com&#038;URI=u%2F7710864%2Fdata%2Fsolutions-apr29.csv&#038;Status_Code=403&#038;Decision_Tag=BLOCK_WEBCAT_12-DefaultGroup-DefaultGroup-NONE-NONE-NONE-NONE&#038;URL_Cat=Online%20Storage%20and%20Backup&#038;WBRS=-2.3&#038;DVS_Verdict=-&#038;DVS_ThreatName=-&#038;Time_Based=0&#038;Reauth_URL=-&nbsp;).
+</p>
+
+<p>
+If you are not automatically redirected to the new address,
+click here: (&nbsp;<a href="http://10.175.231.148:11000/75eun.pl?Time=22%2FFeb%2F2017%3A14%3A11%3A26%20%2B0000&#038;ID=131344545&#038;Client_IP=10.212.204.137&#038;User=-&#038;Site=dl.dropboxusercontent.com&#038;URI=u%2F7710864%2Fdata%2Fsolutions-apr29.csv&#038;Status_Code=403&#038;Decision_Tag=BLOCK_WEBCAT_12-DefaultGroup-DefaultGroup-NONE-NONE-NONE-NONE&#038;URL_Cat=Online%20Storage%20and%20Backup&#038;WBRS=-2.3&#038;DVS_Verdict=-&#038;DVS_ThreatName=-&#038;Time_Based=0&#038;Reauth_URL=-">http://10.175.231.148:11000/75eun.pl?Time=22%2FFeb%2F2017%3A14%3A11%3A26%20%2B0000&#038;ID=131344545&#038;Client_IP=10.212.204.137&#038;User=-&#038;Site=dl.dropboxusercontent.com&#038;URI=u%2F7710864%2Fdata%2Fsolutions-apr29.csv&#038;Status_Code=403&#038;Decision_Tag=BLOCK_WEBCAT_12-DefaultGroup-DefaultGroup-NONE-NONE-NONE-NONE&#038;URL_Cat=Online%20Storage%20and%20Backup&#038;WBRS=-2.3&#038;DVS_Verdict=-&#038;DVS_ThreatName=-&#038;Time_Based=0&#038;Reauth_URL=-</a>&nbsp;).
+</p>
+
+
+
+<p>
+If you have questions, or feel this is an error, please contact
+your organization's network administrator 
+and provide the codes shown below.
+</p>
+
+<hr>
+<table>
+  <tr valign="top">
+    <td valign="top" width="10%">Notification&nbsp;codes:&nbsp;</td>
+    <td valign="top" class="code" width="90%">(1, FOUND, http://10.175.231.148:11000/75eun.pl?Time=22%2FFeb%2F2017%3A14%3A11%3A26%20%2B0000&#038;ID=131344545&#038;Client_IP=10.212.204.137&#038;User=-&#038;Site=dl.dropboxusercontent.com&#038;URI=u%2F7710864%2Fdata%2Fsolutions-apr29.csv&#038;Status_Code=403&#038;Decision_Tag=BLOCK_WEBCAT_12-DefaultGroup-DefaultGroup-NONE-NONE-NONE-NONE&#038;URL_Cat=Online%20Storage%20and%20Backup&#038;WBRS=-2.3&#038;DVS_Verdict=-&#038;DVS_ThreatName=-&#038;Time_Based=0&#038;Reauth_URL=-, https://dl.dropboxusercontent.com/u/7710864/data/solutions-apr29.csv)</td>
+  </tr>
+</table>
+
+</body>
+</html>
