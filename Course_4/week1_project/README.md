@@ -53,9 +53,7 @@ memory (most modern computers should be fine).
 ## Making Plots
 
 Our overall goal here is simply to examine how household energy usage
-varies over a 2-day period in February, 2007. Your task is to
-reconstruct the following plots below, all of which were constructed
-using the base plotting system.
+varies over a 2-day period in February, 2007. 
 
 The four plots that have been constructed can be produced from the four files ending with
 the file extension _.R_. To run a script, simply call the `source()` function in your console
