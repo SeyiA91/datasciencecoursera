@@ -67,3 +67,131 @@ qplot(displ, hwy, data = mpg, facets = . ~ drv) # separates plots by factor simi
 # (i.e expression after '|' symbol )
 qplot(hwy, data = mpg, facets = drv ~ ., binwidth = 2) # does same as above but with histograms
 # facets are essentially the division of graphs by factor variable
+
+###### necessities of ggplot2 ######
+# data frame
+# aesthtetic mappings (aes) how the data are mappe to color, size
+# geoms: geometric objects like points, lines, shapes
+# facets: for conditional plots
+# stats: statitstical transformations like binning, quantiles, smoothing
+# scales: what scale an aesthetic map uses (e.g. male = red, female = blue)
+# coordinate sytem
+
+# using ggplot2 fxn is simiilar to building amodel
+# plot the data
+# overlay a summary
+# metadata and annotation
+
+######## hiearchical clustering ########
+# steps:
+# find closest two things
+# put them together
+# find next closest, etc.
+# requires:
+# defined distance
+# merging approach
+
+
+# creating a random coordinate plot
+set.seed(1234)
+par(mar=c(0,0,0,0))
+x <- rnorm(12, mean = rep(1:3, each = 4), sd = 0.2)
+y <- rnorm(12, mean = rep(c(1,2,1), each = 4), sd = 0.2)
+plot(x,y,col = 'blue', pch = 19, cex = 2)
+text(x+0.05,y+0.05, labels = as.character(1:12))
+
+dataFrame <- data.frame(x = x, y = y)
+dist(dataFrame) # defaults to euclidean distance metric
+
+# hierarchical clustering 1
+suppressMessages(library(fields))
+dataFrame <- data.frame(x=x, y=y)
+rdistxy <- rdist(dataFrame)
+diag(rdistxy) <- diag(rdistxy) + 1e5
+
+# find index of points with min distance
+ind <- which(rdistxy == min(rdistxy), arr.ind = T)
+par(mfrow = c(1,2), mar = rep(0.2, 4))
+# plot points with minimum overlayed
+plot(x,y, col='blue', pch=19,cex=2)
+text(x+0.05,y+0.05,labels = as.character(1:12))
+points(x[ind[1,]],y[ind[1,]],col='orange',pch=19,cex=2)
+
+# make a cluster and cut it at the right height
+distxy <- dist(dataFrame)
+hcluster <- hclust(distxy)
+dendro <- as.dendrogram(hcluster)
+cutDendro <- cut(dendro, h=(hcluster$height[1] + 0.00001))
+plot(cutDendro$lower[[11]], yaxt='n')
+
+# hiearchical clustering 2
+library(fields)
+dataFrame <- data.frame(x=x,y=y)
+rdistxy <- rdist(dataFrame)
+diag(rdistxy) <- diag(rdistxy) + 1e5
+
+# Find the index of the points with minimum distance
+ind <- which(rdistxy == min(rdistxy),arr.ind=TRUE)
+par(mar=rep(0.2,4))
+# Plot the points with the minimum overlayed
+plot(x,y,col="blue",pch=19,cex=2)
+text(x+0.05,y+0.05,labels=as.character(1:12))
+points(x[ind[1,]],y[ind[1,]],col="orange",pch=19,cex=2)
+points(mean(x[ind[1,]]),mean(y[ind[1,]]),col="black",cex=3,lwd=3,pch=3)
+points(mean(x[ind[1,]]),mean(y[ind[1,]]),col="orange",cex=5,lwd=3,pch=1)
+
+# hierarchical clustering 3
+library(fields)
+dataFrame <- data.frame(x=x,y=y)
+rdistxy <- rdist(dataFrame)
+diag(rdistxy) <- diag(rdistxy) + 1e5
+
+# Find the index of the points with minimum distance
+ind <- which(rdistxy == rdistxy[order(rdistxy)][3],arr.ind=TRUE)
+par(mfrow=c(1,3),mar=rep(0.2,4))
+# Plot the points with the minimum overlayed
+plot(x,y,col="blue",pch=19,cex=2)
+text(x+0.05,y+0.05,labels=as.character(1:12))
+points(x[c(5,6)],y[c(5,6)],col="orange",pch=19,cex=2)
+points(x[ind[1,]],y[ind[1,]],col="red",pch=19,cex=2)
+
+# Make dendogram plots
+distxy <- dist(dataFrame)
+hcluster <- hclust(distxy)
+dendro <- as.dendrogram(hcluster)
+cutDendro <- cut(dendro,h=(hcluster$height[2]) )
+plot(cutDendro$lower[[10]],yaxt="n")
+plot(cutDendro$lower[[5]],yaxt="n")
+
+dataFrame <- data.frame(x=x,y=y)
+distxy <- dist(dataFrame)
+hClustering <- hclust(distxy)
+par(mfrow=c(1,1))
+plot(hClustering)
+
+# euclidean is straight line distance btwn two points
+# manhattan distance is similar to the idea of the grid in which the distance btwn two 
+# points is not possible via a straight line like euclidean
+
+myplclust <- function(hclust, lab = hclust$labels, lab.col = rep(1, length(hclust$labels)),
+                      hang = 0.1, ...) {
+    y <- rep(hclust$height, 2)
+    x <- as.numeric(hclust$merge)
+    y <- y[which(x < 0)]
+    x <- x[which(x < 0)]
+    x <- abs(x)
+    y <- y[order(x)]
+    x <- x[order(x)]
+    plot(hclust, labels = F, hang = hang, ...)
+    text(x = x, y = y[hclust$order] - (max(hclust$height) * hang), labels = lab[hclust$order],
+         col = lab.col[hclust$order], srt = 90, adj = c(1, 0.5), xpd = NA, ...)
+}
+
+dataFrame <- data.frame(x = x, y = y)
+distxy <- dist(dataFrame)
+hClustering <- hclust(distxy)
+myplclust(hClustering, lab = rep(1:3, each = 4), lab.col = rep(1:3, each = 4))
+
+# hierchical clustering is used for mostly exploratory efforts
+
+
